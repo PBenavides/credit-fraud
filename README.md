@@ -1,2 +1,2 @@
-# credit-fraud
-Credit fraud algorithm - A ML approach
+# Credit Fraud Detections - ML Approach
+
