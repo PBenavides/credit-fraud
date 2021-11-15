@@ -18,6 +18,9 @@ def load_artifacts():
     with open(dir+'\\app\\artifacts\\first_xgb.sav','rb') as handle:
         xgb_model = pickle.load(handle)
 
+    with open(dir+'\\app\\artifacts\\voting_final.sav','rb') as handle:
+        voting_model = pickle.load(handle)
+
     with open(dir+'\\app\\artifacts\\normalizer.sav','rb') as handle:
         normalizer = pickle.load(handle)
 
@@ -26,6 +29,7 @@ def load_artifacts():
         'et_model' : et_model,
         'lda_model': lda_model,
         'xgb_model': xgb_model,
+        'voting_model': voting_model,
     }
 
     return artifacts_dict

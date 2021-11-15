@@ -61,7 +61,7 @@ class InferencePipeline():
         """
 
         X = self.transform_to_infer()
-        model_one = artifacts['et_model']
+        model_one = artifacts['voting_model']
         prediction = model_one.predict(X)
 
         pred_json = json.dumps(prediction.tolist())

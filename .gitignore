@@ -130,3 +130,5 @@ dmypy.json
 
 #Data Files
 train/input/*
+
+.vscode
