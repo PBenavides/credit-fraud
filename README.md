@@ -1,2 +1,40 @@
 # Credit Fraud Detections - ML Approach
 
+
+This repository contains the train and deploy folder.
+
+``/train`` contains all the notebooks, files and data required to analyze the data, train and tune the model.
+
+``/deploy`` contains the Flask API assets to serve the model as an endpoint and get predictions from it.
+
+To run the Flask API locally you may start having this steps inside a virtual environment:
+
+in deploy/
+```sh
+$ pip install -r requirements
+```
+
+and then run the flask app with
+
+```sh
+$ flask run
+```
+
+You can start making inferences sending a POST requests as:
+
+```Python
+import requests
+
+json_data = {"V1": -0.365234375, "V2": 0.1234415820, "V3": 0.52880859375,"V4": 0.055511474609375,"V5": -0.045166015625,
+ "V6": -0.043853759765625,"V7": -0.12164306640625,"V8": 0.202880859375,"V9": 0.05010986328125,"V10": -0.279296875,
+ "V11": -0.260009765625,"V12": -0.0565185546875,"V13": -0.279296875,"V14": 0.051910400390625,"V15": 0.06829833984375,
+ "V16": 0.0885009765625,"V17": -0.042877197265625,"V18": -0.02642822265625,"V19": -0.34423828125,"V20": -0.05657958984375,"V21": 0.04327392578125,
+ "V22": 0.056427001953125,"V23": -0.038238525390625,"V24": 0.01045989990234375,"V25": 0.00083160400390625,"V26": -0.132568359375,
+ "V27": 0.005035400390625,"V28": -0.00994110107421875,"Amount": 88.67}
+
+api_endpoint ='http://127.0.0.1:5000/predict'
+pass_r = requests.post(api_endpoint, json=json_data)
+
+```
+
+You may find different requirements.txt in each folder. This is because the training and deploy are made to be different environments each.
