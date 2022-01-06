@@ -36,7 +36,7 @@ def predict():
         #PREDICTION
         data_pipeline = InferencePipeline(data_dict = data)  #Apply the pipeline to the data
         
-        prediction = data_pipeline.predict(model_name='XGB')  #Make inference with model you like
+        prediction = data_pipeline.predict(model_name='ET')  #Make inference with model you like
 
         logger.debug('Success prediction of:{}'.format(prediction))
         
